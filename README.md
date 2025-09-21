@@ -121,7 +121,9 @@ Training Accuracy : 97%
 ## 👩‍💻Author
 
 **Linda Lance** 
-[LinkedIn](https://www.linkedin.com/in/linda--lance/) 
+
+[LinkedIn](https://www.linkedin.com/in/linda--lance/)
+
 [GitHub](https://github.com/Linda-Lance)
 
 ---
