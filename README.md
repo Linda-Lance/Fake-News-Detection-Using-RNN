@@ -32,18 +32,18 @@ Dataset : [Kaggle](https://www.kaggle.com/datasets/fillerink/mohanlal-mammooty-i
 
 ◦ Fake\
 
-⚡ How to Run in Google Colab
-----
-1. Open the notebook: Fake News Detection Notebook
+## ⚡ How to Run in Google Colab
+---
+1. Open this notebook in Colab: [Open in Colab](https://colab.research.google.com/drive/12m4cbxG3Qv7gxyAWWtsN-R4RQW3WmXre) ↗
 
-Make sure you have internet connection to install dependencies.
+2. Make sure you have **internet connection**.
 
-2. Run the cells in order. The notebook will automatically install required libraries using:
+3. Run the notebook cells in order. Libraries will be installed automatically:
 
+```python
 !pip install pandas numpy scikit-learn nltk matplotlib seaborn
 
-
-That’s it! The model will train, evaluate, and predict fake news directly in Colab.
+4.Train, evaluate, and predict fake news—all within Colab!
 
 💡 How It Works
 ---
