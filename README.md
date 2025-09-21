@@ -1,4 +1,4 @@
-# 📰Fake News Detection Using RNN
+# 📰Fake News Detection (Real / Fake)
 
 This project implements a **fake news detection system** using a Recurrent Neural Network (RNN) with Keras and TensorFlow. The model is trained on a dataset containing news articles labeled as *real* or *fake*, and predicts whether a given news article is genuine or fake.
 
@@ -108,7 +108,7 @@ Training Accuracy : 97%
 <img width="1270" height="391" alt="Result" src="https://github.com/user-attachments/assets/994bea81-be0d-4567-b6f3-0601732df1f5" />
 
 
-## Future Enhancements
+## 🚀Future Enhancements
 
 - Increase dataset size for better accuracy📈.
 - Experiment with LSTM or GRU layers for improved sequence learning🔄.
