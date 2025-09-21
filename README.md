@@ -58,6 +58,15 @@ That’s it! The model will train, evaluate, and predict fake news directly in C
 <img width="1014" height="145" alt="Screenshot 2025-09-21 195428" src="https://github.com/user-attachments/assets/a611f3fd-a33d-48da-9dcc-a4618781836c" />
 <img width="1270" height="391" alt="Screenshot 2025-09-21 195450" src="https://github.com/user-attachments/assets/d8d5e0c2-9a74-465b-9e6e-d928e0378228" />
 
-📜 License
+## 🚀 Future Enhancements
 ---
-MIT License – check the LICENSE file for details.
+⚡ Performance Optimization – Reduce prediction time for faster results on large datasets.
+🌐 API Integration – Provide an API so other applications can use the fake news detection model.
+🛡️ Spam & Bot Detection – Integrate with social media to detect bot-generated fake news.
+📊 Topic Modeling – Automatically categorize fake news by topic for better analysis.
+🤖 Continuous Learning – Update the model automatically with new data to improve accuracy over time.
+
+## 📜 License
+---
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
