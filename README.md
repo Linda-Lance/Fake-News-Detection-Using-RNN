@@ -41,7 +41,7 @@ Dataset : [Kaggle](https://www.kaggle.com/datasets/fillerink/mohanlal-mammooty-i
 3. Run the notebook cells in order. Libraries will be installed automatically:
 
 ```python
-!pip install pandas numpy scikit-learn nltk matplotlib seaborn
+!pip install pandas numpy scikit-learn nltk matplotlib seaborn```
 
 4.Train, evaluate, and predict fake news—all within Colab!
 
