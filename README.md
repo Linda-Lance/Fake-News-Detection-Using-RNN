@@ -1,4 +1,4 @@
-## 📰 Fake News Detector
+## 📰 Fake News Detection (Real/Fake)
 ---
 "Spot fake news before it spots you!"
 
@@ -54,16 +54,20 @@ That’s it! The model will train, evaluate, and predict fake news directly in C
 🌟 Results
 ---
   ✨Model Accuracy: ~97%
-  
-<img width="1014" height="145" alt="Screenshot 2025-09-21 195428" src="https://github.com/user-attachments/assets/a611f3fd-a33d-48da-9dcc-a4618781836c" />
-<img width="1270" height="391" alt="Screenshot 2025-09-21 195450" src="https://github.com/user-attachments/assets/d8d5e0c2-9a74-465b-9e6e-d928e0378228" />
+  <img width="1014" height="145" alt="Accuracy" src="https://github.com/user-attachments/assets/4e7c8046-5046-4d2e-a163-ca7263cf0823" />
+  <img width="1270" height="391" alt="Result" src="https://github.com/user-attachments/assets/e8afdd27-2d57-4813-9de1-cb0048e032a6" />
+
 
 ## 🚀 Future Enhancements
 ---
 ⚡ Performance Optimization – Reduce prediction time for faster results on large datasets.
+
 🌐 API Integration – Provide an API so other applications can use the fake news detection model.
+
 🛡️ Spam & Bot Detection – Integrate with social media to detect bot-generated fake news.
+
 📊 Topic Modeling – Automatically categorize fake news by topic for better analysis.
+
 🤖 Continuous Learning – Update the model automatically with new data to improve accuracy over time.
 
 ## 📜 License
