@@ -1,77 +1,133 @@
-## 📰 Fake News Detection (Real/Fake)
+# 📰Fake News Detection Using RNN
+
+This project implements a **fake news detection system** using a Recurrent Neural Network (RNN) with Keras and TensorFlow. The model is trained on a dataset containing news articles labeled as *real* or *fake*, and predicts whether a given news article is genuine or fake.
+
 ---
-"Spot fake news before it spots you!"
 
-Fake news spreads fast, but now we can fight back. This project uses Machine Learning and Natural Language Processing (NLP) to automatically detect whether a news article is real or fake.
+## 📊Dataset
 
-## 🚀 Features
+- The project uses two CSV files:
+  - `True.csv` — contains real news articles✅
+  - `Fake.csv` — contains fake news articles❌
+- Each dataset contains the columns:
+  - `title` — title of the news📝
+  - `text` — content of the news📰
+- Labels are assigned as follows:
+  - `1` → Real news✅
+  - `0` → Fake news❌
+- The datasets are concatenated, shuffled, and preprocessed for training.
+
 ---
-  🔹Smart Text Analysis – Cleans and processes news text using NLP techniques like tokenization, lemmatization, and stopword removal.
-  
-  🔹Feature Extraction – Turns words into meaningful numbers with TF-IDF and embeddings.
-  
-  🔹Multiple ML Models – Logistic Regression, Naive Bayes, and Support Vector Machines to find the best predictor.
-  
-  🔹Performance Metrics – Accuracy, precision, recall, and F1-score to evaluate model strength.
-  
-  🔹Optional Web Interface – Test real-time news detection with a simple web app.
 
-🛠️ Technologies Used
+## ✨Features
+
+- Combines `title` and `text` into a single `content` column.
+- Text cleaning and preprocessing:
+  - Converts to lowercase🔤
+  - Removes URLs🌐
+  - Removes non-word characters❌
+  - Removes extra spaces➖
+  - Removes stopwords🛑
+  - Lemmatizes words🧠
+- Converts text into sequences of integers using **Tokenization**🔢.
+- Pads sequences to a fixed length for model input📏.
+
 ---
-  🔸Python – The language of choice for AI
-  
-  🔸Libraries: pandas, numpy, scikit-learn, nltk, matplotlib, seaborn
 
-📂 Dataset
-----
-The dataset contains news articles labeled as Real or Fake
+## ⚙️Installation
 
-Dataset : [Kaggle](https://www.kaggle.com/datasets/fillerink/mohanlal-mammooty-images)
-
-◦ True\
-
-◦ Fake\
-
-## ⚡ How to Run in Google Colab
----
-1. Open this notebook in Colab: [Open in Colab](https://colab.research.google.com/drive/12m4cbxG3Qv7gxyAWWtsN-R4RQW3WmXre) ↗
-
-2. Make sure you have **internet connection**.
-
-3. Run the notebook cells in order. Libraries will be installed automatically:
-
-```python
-!pip install pandas numpy scikit-learn nltk matplotlib seaborn
+1. Clone the repository:
+```bash
+git clone <repository_link>
+cd fake-news-detection
 ```
 
-4.Train, evaluate, and predict fake news—all within Colab!
+2. Install required Python packages:
+```bash
+pip install pandas numpy tensorflow scikit-learn nltk
+```
 
-💡 How It Works
+3. Download NLTK data:
+```python
+import nltk
+nltk.download('stopwords')
+nltk.download('wordnet')
+```
+
 ---
-  1. Preprocessing – Cleans the text and removes noise.
-  2. Feature Extraction – Converts text to numbers ML models can understand.
-  3. Prediction – ML model predicts if news is Real ✅ or Fake ❌.
-  
-🌟 Results
+
+## ▶️How to Run
+
+1. Load the dataset (`True.csv` and `Fake.csv`) into the `/content/` directory.
+2. Run the Python script (`code.ipynb`) or Jupyter Notebook.
+3. The code will:
+   - Preprocess the dataset🧹
+   - Train the RNN model🏋️‍♂️
+   - Evaluate the accuracy on the test set📈
+4. Make predictions on new news articles by providing raw text✍️.
+
 ---
-  ✨Model Accuracy: ~97%
-  <img width="1014" height="145" alt="Accuracy" src="https://github.com/user-attachments/assets/4e7c8046-5046-4d2e-a163-ca7263cf0823" />
-  <img width="1270" height="391" alt="Result" src="https://github.com/user-attachments/assets/e8afdd27-2d57-4813-9de1-cb0048e032a6" />
 
+## 🏗️Model Architecture
 
-## 🚀 Future Enhancements
+- **Embedding Layer** — Converts words to dense vectors (`input_dim=5000`, `output_dim=64`)📚
+- **SimpleRNN Layer** — 120 units, processes sequential data🔄
+- **Dropout Layers** — Reduces overfitting (0.5 and 0.3)💧
+- **Dense Layer** — 64 neurons with ReLU activation⚡
+- **Output Layer** — Single neuron with sigmoid activation for binary classification🎯
+- **Loss function:** Binary Crossentropy🔻
+- **Optimizer:** Adam⚙️
+- **Metrics:** Accuracy✅  
+
+The model is trained for **5 epochs** with a batch size of 64🕒.
+
 ---
-⚡ Performance Optimization – Reduce prediction time for faster results on large datasets.
 
-🌐 API Integration – Provide an API so other applications can use the fake news detection model.
+## 🖥️Usage Example
 
-🛡️ Spam & Bot Detection – Integrate with social media to detect bot-generated fake news.
+```python
+# Sample news text
+sample_news = """Jeffrey Toobin chime protect Hillary Clinton poor taste mostly untrue..."""
+cleaned = clean_text(sample_news)
+seq = tokenizer.texts_to_sequences([cleaned])
+padded = pad_sequences(seq, maxlen=200)
+prediction = model.predict(padded)
 
-📊 Topic Modeling – Automatically categorize fake news by topic for better analysis.
+if prediction < 0.5:
+    print("Fake news")
+else:
+    print("Real news")
+```
 
-🤖 Continuous Learning – Update the model automatically with new data to improve accuracy over time.
-
-## 📜 License
 ---
+
+## 🚀Result
+
+Training Accuracy : 97%
+<img width="1014" height="145" alt="Accuracy" src="https://github.com/user-attachments/assets/9067a877-42ec-44fd-8502-327da972b109" />
+<img width="1270" height="391" alt="Result" src="https://github.com/user-attachments/assets/994bea81-be0d-4567-b6f3-0601732df1f5" />
+
+
+## Future Enhancements
+
+- Increase dataset size for better accuracy📈.
+- Experiment with LSTM or GRU layers for improved sequence learning🔄.
+- Add sentiment analysis features😊😡.
+- Deploy the model as a web application using Flask or Streamlit🌐.
+- Implement multi-class classification for different types of misinformation🕵️‍♂️.
+
+---
+
+## 👩‍💻Author
+
+**Linda Lance** 
+[LinkedIn](https://www.linkedin.com/in/linda--lance/) 
+[GitHub](https://github.com/Linda-Lance)
+
+---
+
+## 📄License
+
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
 
